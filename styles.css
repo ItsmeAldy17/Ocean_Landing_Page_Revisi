@@ -6,23 +6,64 @@
  height: 50px;
 
 }
-.navbar {
-    background-color: #212529;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 0;
-    margin-bottom: 0;
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  display: flex;
+}
+/* Mengubah font pada elemen nav-link */
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
 }
 
-.navbar .navbar-brand {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
+
+.nav-link:hover::after {
+  content: "";
+  display:block;
+  height: 3px;
+  background-color: #fff;
+  transition: height 0.3s ease-in-out;
+}
+
+.navbar-scrolled .nav-link {
+  color: #000;
+}
+
+.navbar-scrolled .nav-link:hover {
+  color: #03256c;
+}
+
+.navbar-scrolled .nav-link:hover::after {
+  content: "";
+  display:block;
+  height: 3px;
+  background-color: #03256c;
+  transition: height 0.3s ease-in-out;
+}
+
+.nav-item .active{
+  color: #2541B2;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.2s ease-in-out;
+  z-index: 999;
+}
+
+.navbar-scrolled {
+  background-color: #03256c;
 }
 
 
 .navbar .nav-link:hover {
-    color: #ffc107;
+    color: #03256c;
 }
 
 .cotainerx{
@@ -71,7 +112,7 @@ p{
 
 
 .section{
-  padding: 6rem 0 2rem;
+  padding: 2rem 0 2rem;
 }  
 
 .sectionthree{
@@ -110,6 +151,7 @@ p{
 
   
 }
+
 
 
 
