@@ -33,39 +33,30 @@
       </head>
       <body>
     
-        <div class="sectionone min-vh-100 d-flex flex-column">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid container">
-    
-              <div class="navbar-brand " href="#">
-                    <img class="imglogo" src="./assets/waste-ocean-dark.png"   >
-              </div>
-    
-              <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                
+        <div class="min-vh-100 d-flex flex-column">
+          <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a class="navbar-brand" href="assets/ocean-icon.ico">
+              <img src="assets/waste-ocean-dark.png" alt="Logo" style="max-height: 50px;">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-    
-    
-    
-              <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto">
-                  
-                  <li class="nav-item me-md-5">
-                    <a class="nav-link" style="font-family: Montserrat; font-weight: 400;" href="#">Actions</a>
-                  </li>
-    
-                  <li class="nav-item me-md-5">
-                    <a class="nav-link hov" href="#" style="font-family: Montserrat; font-weight: 400;">Resources</a>
-                  </li>
-    
-                  <li class="nav-item dropdown me-md-5">
-                    <a class="nav-link hov" href="#" style="font-family: Montserrat; font-weight: 400;">Projects</a>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Action <span class="sr-only"></span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-family: Montserrat; font-weight: 400;">Explore</a>
+                    <a class="nav-link" href="#">Resources</a>
                   </li>
-    
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Projects</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Explore</a>
+                    </li>
                 </ul>
               </div>
             </div>
@@ -80,14 +71,14 @@
                   <div class="row">
                     <div class="col text-center">
                       <div class="d-flex align-items-center justify-content-center" >
-                        <button class="btn pe-5 ps-5 pt-2 pb-2" style="background-color: #03256C; font-family: Montserrat; font-weight: 600; color: white;" >Take Action</button>
+                        <button class="btn pe-5 ps-5 pt-2 pb-2" style="background-color: #03256C; font-family: Montserrat; font-weight: 600; color: white;" onclick="alertSay()" >Take Action</button>
                       </div>
                     </div>
                   </div>
              </div>
             </div>
             
-          </div>
+          </div>  
     
       
           </div>
@@ -224,10 +215,7 @@
                   <p style="color: white;">We provides the funds needed to incentivize collection and recycling of this gear. This program creates a pathway for the reclamation of end of life fishing gear.</p>
                 </div>
               </div>
-    
-    
             </div>
-          
             </div>
           </div>
         </div>
@@ -243,9 +231,8 @@
               </div>
               <div class="col-xs-12 col-sm-6 col-md-6 e d-flex " style="height: 400px;">
                 <div class="my-auto col-lg-12 col-12">
-                  <form  style="width: 100%;">
+                  <form id="form" style="width: 100%;">
                     <div class="form-group ">
-                    
                       <input type="text" class="form-control w-100" id="name" placeholder="Enter your name">
                     </div>
                     <div class="form-group mt-4">
@@ -256,35 +243,66 @@
 
                       <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
                     </div>
-                    <button type="submit " class="btn  mt-4" style="background: #03256C; color: white;">Submit</button>
                   </form>
-                
-                
+                  <input type="submit" class="btn mt-4" style="background: #03256C; color: white;" onclick="formResponse()">
+                  <div class="section" id="response" style="display: none;">
+                    <h1 style="color:#06BEE1;" class="fw-bold">Thanks for your response. Your data recorded as :</h1>
+                    <div class="d-flex">
+                     <h5 class="">Hello, my name is : &nbsp;</h5> 
+                     <h5 class="fw-bold" id="nameResponse">value</h5>
+                    </div>
+                    <div class="d-flex">
+                    <h5 class="">Please contact me through : &nbsp;</h5> <h5 class=" fw-bold" id="emailResponse">value</h5>
+                    </div>
+                    <div class="d-flex">
+                    <h5 class="">I want to say about :&nbsp;</h5> <h5 class="d-inline-block fw-bold" id="messageResponse">value</h5>
+                  </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
     
           <footer class="container mb-5">
-            <div class="row justify-content-around mb-0 pt-5 pb-0 ">
-                <div class=" col-12">
-                    <div class="row justify-content-center"> 
-                        <div class="col-md-3 col-12 font-italic align-items-center  mt-md-3 mt-4">
-                          <h5>
-                            <span> 
-                              <img src="./assets/ocean-icon.png" class="img-fluid mb-1 imglogo"  >
-                            </span><b class="text-dark"> Ocean<span class="text-muted"> One</span></b></h5>
-                            
-                        <p class="social mt-md-3 mt-2"> <span><i class="fa fa-facebook " aria-hidden="true"></i></span>  <span><i class="fa fa-linkedin" aria-hidden="true"></i></span>  <span><i class="fa fa-twitter" aria-hidden="true"></i></span>  </p>
+            <div class="row justify-content-around mb-0 pt-5 pb-0">
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-3 col-12 font-italic align-items-center mt-md-3 mt-4">
+                            <h5>
+                                <span>
+                                    <img src="./assets/ocean-icon.png" class="img-fluid mb-1 imglogo" alt="Ocean One Logo">
+                                </span>
+                                <b class="text-dark">Ocean<span class="text-muted"> One</span></b>
+                            </h5>
+        
+                            <p class="social mt-md-3 mt-2">
+                                <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                                <span><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                                <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                            </p>
                         </div>
-                        <div class="col-md-3 col-12  my-sm-0"><ul class="list-unstyled"><li class="mt-md-3 mt-4">Newsletter</li> </ul> </div>
-                        <div class="col-md-3 col-12 my-sm-0 "><ul class="list-unstyled"><li class="mt-md-3 mt-4">Privacy Policy</li></ul></div>
-                        <div class="col-xl-auto col-md-3 col-12 my-sm-0 "><ul class="list-unstyled"><li class="mt-md-3 mt-4">FAQS</li></ul></div>
-                    </div>  
+                        <div class="col-md-3 col-12 my-sm-0">
+                            <ul class="list-unstyled">
+                                <li class="mt-md-3 mt-4">Newsletter</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-12 my-sm-0">
+                            <ul class="list-unstyled">
+                                <li class="mt-md-3 mt-4">Privacy Policy</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-12 my-sm-0">
+                            <ul class="list-unstyled">
+                                <li class="mt-md-3 mt-4">FAQS</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>            
+            </div>
         </footer>
+        
         </div>
+        <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
       </body>
 </html>
